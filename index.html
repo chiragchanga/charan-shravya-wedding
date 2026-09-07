@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arial+Nova+Cond+Light:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Arial Nova Cond Light',serif;background:#f8f6f2;color:#3f3f3f;line-height:1.8;}
+section{padding:60px 25px;text-align:center;position:relative;z-index:2;}
+h1,h2{margin-bottom:20px;}
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)),url('https://res.cloudinary.com/cddateo4/image/upload/f_auto,q_auto/4949') no-repeat center center/cover;animation:heroZoom 15s ease-in-out infinite alternate;}
+@keyframes heroZoom{from{background-size:100%;}to{background-size:110%;}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.hero h1{font-size:3rem;animation:fadeIn 2s ease;}
+.hero p{font-size:1.2rem;margin-top:10px;}
+.monogram{font-size:4rem;color:#b89b5e;margin-bottom:20px;}
+.date{font-size:1.5rem;margin-top:20px;color:#8c7a5b;}
+.card{max-width:700px;margin:auto;padding:30px;border-radius:20px;background:rgba(255,255,255,0.75);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,0.3);box-shadow:0 10px 25px rgba(0,0,0,0.08);}
+.timeline-item{margin-bottom:25px;}
+.button{display:inline-block;margin:10px;padding:14px 24px;border-radius:12px;text-decoration:none;color:white;font-weight:bold;}
+.map-btn{background:#2e8b57;}.yes-btn{background:#25D366;}.no-btn{background:#ff6b6b;}.calendar-btn{background:#4c6fff;}
+#countdown{font-size:2rem;font-weight:bold;color:#d97706;}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin-top:20px;}
+.gallery img{width:100%;height:260px;object-fit:cover;border-radius:16px;transition:0.4s;}
+.gallery img:hover{transform:scale(1.05);}
+.floating-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:hidden;z-index:1;}
+.floating-container span{will-change:transform;position:absolute;top:-50px;font-size:37px;animation:floatDown linear infinite;}
+.floating-container span:nth-child(1){left:10%;animation-duration:3s;}
+.floating-container span:nth-child(2){left:30%;animation-duration:5s;}
+.floating-container span:nth-child(3){left:50%;animation-duration:7s;}
+.floating-container span:nth-child(4){left:70%;animation-duration:8s;}
+.floating-container span:nth-child(5){left:90%;animation-duration:10s;}
+.floating-container span:nth-child(6){left:110%;animation-duration:12s;}
+@keyframes floatDown{from{transform:translateY(-50px) rotate(0deg);}to{transform:translateY(110vh) rotate(360deg);}}
+footer{text-align:center;padding:40px;color:#666;}
+@media(max-width:768px){.hero h1{font-size:2.2rem;}#countdown{font-size:1.5rem;}.button{display:block;width:100%;margin:12px 0;}.card{padding:20px;}}
+</style>
+</head>
+<body>
+<div class="floating-container"><span>🌸</span><span>🌻</span><span>🌼</span><span>🌺</span><span>🌷</span><span>🌸</span></div>
+<section class="hero">
+<h1>Charan ❤️ Shravya</h1>
+<p>Together with our families</p>
+<p>invite you to celebrate our wedding</p>
+<div class="date">5 November 2026</div>
+</section>
+<section><div class="card"><h2>Countdown to the Big Day</h2><div id="countdown"></div></div></section>
+<section><div class="card"><h2>Event Timeline</h2><div class="timeline-item"><h3>Oorukuduva</h3><p>4 November 2026 · 4:00 PM</p></div><div class="timeline-item"><h3>Muhurtha</h3><p>5 November 2026 · 10:00 AM</p></div><div class="timeline-item"><h3>Ganga Pooja</h3><p>5 November 2026 · 6:00 PM</p></div></div></section>
+<section><div class="card"><h2>Venue</h2><p>Kodava Samaja Balugodu<br>Kodagu, Karnataka</p><br><a href="https://maps.app.goo.gl/p3oALPeLamXyTVtY7" target="_blank" class="button map-btn">📍 View Location</a></div></section>
+<section><div class="card"><h2>RSVP</h2><p>Please let us know if you'll be joining us.</p><br><a href="https://wa.me/919900418260?text=Hi%20Charan,%20I%20will%20be%20attending%20the%20wedding." target="_blank" class="button yes-btn">✅ I'll Attend</a><a href="https://wa.me/918277356308?text=Hi%20Charan,%20Unfortunately%20I%20won%27t%20be%20able%20to%20attend." target="_blank" class="button no-btn">❌ Can't Attend</a></div></section>
+<section><div class="card"><h2>Add To Calendar</h2><a href="https://calendar.google.com/calendar/render?action=TEMPLATE" target="_blank" class="button calendar-btn">📅 Add to Google Calendar</a></div></section>
+<section><div class="card"><h2>Thank You</h2><p>Your presence will make our celebration even more special.</p><br><h3>We look forward to celebrating with you!</h3></div></section>
+<footer>With Love ❤️ <br> Charan &amp; Shravya</footer>
+<script>
+const weddingDate=new Date(2026,10,4,19,0,0);
+function updateCountdown(){const now=new Date();const difference=weddingDate-now;if(difference<=0){document.getElementById('countdown').innerHTML='🎉 The Wedding Has Begun! 🎉';return;}const days=Math.floor(difference/(1000*60*60*24));const hours=Math.floor((difference%(1000*60*60*24))/(1000*60*60));const minutes=Math.floor((difference%(1000*60*60))/(1000*60));const seconds=Math.floor((difference%(1000*60))/1000);document.getElementById('countdown').innerHTML=`${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;}
+updateCountdown();setInterval(updateCountdown,1000);
+</script>
+</body>
+</html>
