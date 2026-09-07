@@ -56,7 +56,7 @@ footer{text-align:center;padding:40px;color:#666;}
 <section><div class="card"><h2>Thank You</h2><p>Your presence will make our celebration even more special.</p><br><h3>We look forward to celebrating with you!</h3></div></section>
 <footer>With Love ❤️ <br> Charan &amp; Shravya</footer>
 <script>
-const weddingDate=new Date(2026,10,4,19,0,0);
+const weddingDate = new Date("2026-11-04T19:00:00");
 function updateCountdown(){const now=new Date();const difference=weddingDate-now;if(difference<=0){document.getElementById('countdown').innerHTML='🎉 The Wedding Has Begun! 🎉';return;}const days=Math.floor(difference/(1000*60*60*24));const hours=Math.floor((difference%(1000*60*60*24))/(1000*60*60));const minutes=Math.floor((difference%(1000*60*60))/(1000*60));const seconds=Math.floor((difference%(1000*60))/1000);document.getElementById('countdown').innerHTML=`${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;}
 updateCountdown();setInterval(updateCountdown,1000);
 </script>
